@@ -1,0 +1,10 @@
+{
+  "name": "Time-Travel Photo Booth",
+  "description": "Step into history! Capture or upload your portrait, analyze your facial features and historical persona matches with Gemini 3.1 Pro, and seamlessly insert your face into legendary historical scenes with Gemini 3.1 Flash Image.",
+  "requestFramePermissions": [
+    "camera"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
