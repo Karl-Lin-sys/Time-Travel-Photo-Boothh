@@ -1,3 +1,4 @@
+import { localApiOnly } from './local-api-guard.mjs';
 import express, { Request, Response } from 'express';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -12,6 +13,7 @@ const __dirname = path.dirname(__filename);
 
 async function startServer() {
   const app = express();
+app.use('/api', localApiOnly(() => PORT));
   const PORT = 3000;
 
   // Allow high payloads for base64 image data from camera & uploads
@@ -290,7 +292,7 @@ Maintain the character's facial likeness and overall composition while applying 
     });
   }
 
-  app.listen(PORT, '0.0.0.0', () => {
+  app.listen(PORT, '127.0.0.1', () => {
     console.log(`Time-Travel Photo Booth server running on http://0.0.0.0:${PORT}`);
   });
 }
